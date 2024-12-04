@@ -1,0 +1,15 @@
+{
+  "timeZone": "America/Sao_Paulo",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "Middleware",
+        "version": "0",
+        "libraryId": "1AakZEDW894MZZxPQh-mYet9iqXP5Hg9Nkzp7gmdl7tGVygjRys2ABj-P",
+        "developmentMode": true
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
