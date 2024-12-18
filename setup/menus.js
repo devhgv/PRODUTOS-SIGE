@@ -4,7 +4,7 @@ function normalMenu() {
     .createMenu("Menu Produtos")
     .addItem("Sobre", "modalAboutProducts")
     .addSeparator()
-    .addItem("Atualizar", "timeTriggerre_getAllProducts")
+    .addItem("Atualizar", "timeTrigger_getAllProducts")
   menu.addToUi();
 }
 
