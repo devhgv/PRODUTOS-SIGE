@@ -32,7 +32,7 @@ const TestDataSheets = (function () {
     let testResults = [];
     const currentDatetime = new Date();
     const dateFormat = Utilities.formatDate(currentDatetime, Session.getScriptTimeZone(), "dd/MM/yyyy HH:mm:ss"); 
-  
+
     // Testar dados carregados
     testResults.push(
       toBeTruthy(
@@ -42,7 +42,7 @@ const TestDataSheets = (function () {
         dateFormat
       )
     );
-  
+
     // Testar IDs
     const produtosComID = sheetDataProdutos.filter((produto) => produto[0] !== "");
     testResults.push(
@@ -54,15 +54,18 @@ const TestDataSheets = (function () {
         dateFormat
       )
     );
-  
+
     // Adicionar resultados à planilha
     const insertTitlesTests = sheetRelatorios.getLastRow() + 1;
     sheetRelatorios.getRange(insertTitlesTests, 1, 1, titlesTestsColumns.length).setValues([titlesTestsColumns]);
-  
+
     sheetRelatorios
       .getRange(insertTitlesTests + 1, 1, testResults.length, titlesTestsColumns.length)
       .setValues(testResults);
-  
+
     return testResults;
   }
-})();  
+
+  // Certifique-se de retornar a função para acessá-la de fora da IIFE
+  return { runAllTests }; // Esta linha é importante para expor a função
+})();

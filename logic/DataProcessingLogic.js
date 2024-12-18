@@ -132,7 +132,7 @@ function setupHeaders() {
       SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Produtos");
     const lastColumn = sheet.getLastColumn() + 1; // Obtém o número da última coluna
 
-    const lastUpdateTitle = "ÚltimaAtualização";
+    const lastUpdateTitle = "Ultima_Atualização";
     sheet.getRange(1, lastColumn).setValue(lastUpdateTitle);
 
     const currentDatetime = new Date();

@@ -1,27 +1,22 @@
 function formatCellsBasedOnResult() {
-  const sheet =
-    SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Relatorios");
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Relatorios");
   const dataRange = sheet.getDataRange().getValues();
   const headerRow = dataRange[0]; // Cabeçalho
 
   // Encontrar o índice da coluna que contém a palavra "RESULTADO" e armazenar na variável columnIndex
   const columnIndex = headerRow.findIndex((header) => header === "RESULTADO");
 
-  // Caso na coluna "RESULTADO" seja encontrada ou seja, diferente de -1
   if (columnIndex !== -1) {
     const backgroundColors = [];
 
     for (let i = 1; i < dataRange.length; i++) {
-      // Começando da segunda linha, pois a primeira é o cabeçalho
-
-      // result armazena os valores da coluna onde o index é o encontrado na columnIndex
       const result = dataRange[i][columnIndex];
       let color = null;
 
       if (result === "APROVADO") {
-        color = "#B7E1CD";
+        color = "#B7E1CD"; // Cor para aprovado
       } else if (result === "REPROVADO") {
-        color = "#EA9999";
+        color = "#EA9999"; // Cor para reprovado
       }
 
       backgroundColors.push([color]);
@@ -32,7 +27,7 @@ function formatCellsBasedOnResult() {
       columnIndex + 1,
       backgroundColors.length,
       1
-    ); // +1 para ajustar para a notação base 1
+    );
     backgroundRange.setBackgrounds(backgroundColors);
   } else {
     Logger.log("Coluna 'RESULTADO' não encontrada.");
