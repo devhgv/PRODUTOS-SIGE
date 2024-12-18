@@ -7,15 +7,15 @@ function getDataSIGE() {
     // Deixará apenas as colunas necessárias
     const filteredData = dataSheets.map(product => ({
       ID: product.ID,
-      UltimaAlteracao: product.UltimaAlteracao,
+      Codigo: product.Codigo,
+      Nome: product.Nome,
       Categoria: product.Categoria,
       Marca: product.Marca,
       Fornecedor: product.Fornecedor,
-      Codigo: product.Codigo,
       Ean: product.Ean,
       Pratileira: product.Pratileira,
-      NumeroSerie: product.NumeroSerie,
-      Nome: product.Nome,
+      NumeroSerie: product.NumeroSerie,      
+      UltimaAlteracao: product.UltimaAlteracao,
     }));
 
     // Processa os dados necessários
@@ -80,15 +80,15 @@ function setupHeaders() {
   console.log("CONFIGURANDO OS CABEÇALHOS");
   const headers = [
     "ID",
-    "UltimaAlteracao",
+    "Codigo",
+    "Nome",
     "Categoria",
     "Marca",
     "Fornecedor",
-    "Codigo",
     "Ean",
     "Pratileira",
     "NumeroSerie",
-    "Nome",
+    "UltimaAlteracao",
   ];
 
   const insertTitles = sheetProdutos.getLastRow() + 1;
@@ -100,15 +100,15 @@ function setupHeaders() {
   console.log("CONFIGURANDO OS DADOS");
   const valuesMatrix = productsJson.map(product => [
     product.ID,
-    product.UltimaAlteracao,
+    product.Codigo,
+    product.Nome,
     product.Categoria,
     product.Marca,
     product.Fornecedor,
-    product.Codigo,
     product.Ean,
     product.Pratileira,
     product.NumeroSerie,
-    product.Nome,
+    product.UltimaAlteracao,
   ]);
 
   const numColumns = valuesMatrix[0].length;

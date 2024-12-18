@@ -11,3 +11,12 @@ const DataProcessingOrchestration = (function (business) {
     processDataProducts,
   };
 })(DataProcessingLogic);
+
+function createTimeTrigger() {
+  // Cria o gatilho para rodar a função timeTrigger_getAllProducts todos os dias à meia-noite.
+  ScriptApp.newTrigger('timeTrigger_getAllProducts')
+    .timeBased()
+    .everyDays(1)
+    .atHour(7) // Configura para rodar às 07:00 horas da manhã
+    .create();
+}
