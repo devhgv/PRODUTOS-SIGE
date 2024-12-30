@@ -32,7 +32,6 @@ function getDataSIGE() {
   }
 }
 
-
   function sendEmailToAdmin() {
     const emailsToSend = emailDestiny.join(", ");
     GmailApp.sendEmail(emailsToSend, emailTopic, emailMessage);

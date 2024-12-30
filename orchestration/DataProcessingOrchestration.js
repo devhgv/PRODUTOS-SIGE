@@ -20,3 +20,4 @@ function createTimeTrigger() {
     .atHour(7) // Configura para rodar às 07:00 horas da manhã
     .create();
 }
+
